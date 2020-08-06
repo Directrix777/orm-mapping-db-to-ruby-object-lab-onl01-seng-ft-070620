@@ -77,4 +77,10 @@ class Student
     self.first_X_students_in_grade_10(1)
   end
 
+  def self.students_below_12th_grade(x)
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = 12
+    SQL
+  end
+
 end
