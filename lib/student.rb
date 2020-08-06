@@ -64,9 +64,10 @@ class Student
   end
 
   def self.first_X_students_in_grade_10(x)
+    firsts = []
     counter = 0
     x.times {
-      self.all_students_in_grade_X(10)[counter]
+      firsts << self.all_students_in_grade_X(10)[counter]
       counter += 1
     }
   end
