@@ -56,7 +56,7 @@ class Student
       SELECT * FROM students WHERE grade = ?
     SQL
 
-    
+
   end
-  
+
 end
