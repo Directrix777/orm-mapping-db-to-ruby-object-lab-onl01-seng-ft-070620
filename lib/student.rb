@@ -60,5 +60,15 @@ class Student
   end
 
   def self.all_students_in_grade_9
+    self.all_students_in_grade_X(9)
+  end
+
+  def first_X_students_in_grade_10(x)
+    coutner = 0
+    x.times {
+      self.all_students_in_grade_X(10)[counter]
+      counter += 1
+    }
+  end
 
 end
