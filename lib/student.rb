@@ -23,8 +23,8 @@ class Student
       SELECT * FROM students WHERE name = ?
     SQL
 
-    rows = DB[:conn].execute(sql, name)
-    Student.new_from_db(rows)[0]
+    row = DB[:conn].execute(sql, name)
+    Student.new_from_db(row)
   end
 
   def save
