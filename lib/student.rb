@@ -22,7 +22,7 @@ class Student
       SELECT * FROM students WHERE name = ? LIMIT 1
     SQL
 
-    DB[:conn].execute(sql, name).collect{|row| Student.new_from_db(row)}
+    DB[:conn].execute(sql, name).collect{|row| Student.new_from_db(row)}.first
   end
 
   def save
