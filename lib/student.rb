@@ -70,6 +70,7 @@ class Student
       firsts << self.all_students_in_grade_X(10)[counter]
       counter += 1
     }
+    firsts
   end
 
 end
