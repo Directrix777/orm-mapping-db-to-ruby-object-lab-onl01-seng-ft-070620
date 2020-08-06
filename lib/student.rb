@@ -14,7 +14,7 @@ class Student
       SELECT * FROM students
     SQL
 
-    rows = DB[:conn].execute(sql).collect{|row| Student.new_from_db(row)}
+    DB[:conn].execute(sql).collect{|row| Student.new_from_db(row)}
   end
 
   def self.find_by_name(name)
@@ -50,4 +50,13 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+
+  def self.all_students_in_grade_X(x)
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = ?
+    SQL
+
+    
+  end
+  
 end
