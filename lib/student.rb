@@ -14,17 +14,15 @@ class Student
       SELECT * FROM students
     SQL
 
-    rows = DB[:conn].execute(sql)
-    rows.collect{|row| Student.new_from_db(row)}
+    rows = DB[:conn].execute(sql)collect{|row| Student.new_from_db(row)}
   end
 
   def self.find_by_name(name)
     sql = <<-SQL
-      SELECT * FROM students WHERE name = ?
+      SELECT * FROM students WHERE name = ? LIMIT 1
     SQL
 
-    row = DB[:conn].execute(sql, name)
-    Student.new_from_db(row)[0]
+    DB[:conn].execute(sql, name).collect{|row| Student.new_from_db(row)}
   end
 
   def save
